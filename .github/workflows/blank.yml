@@ -31,6 +31,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-      run: 
+      - shell: bash
+      run: |
       touch hello_world.txt
       echo "Hello, world!" >> hello_world.txt
