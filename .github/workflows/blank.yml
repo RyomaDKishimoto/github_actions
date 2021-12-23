@@ -28,8 +28,7 @@ jobs:
 
       - name: Create file
         run: |
-          touch ~/other.txt
-          echo First        > other.txt
+          echo First        > README.md
           echo Second Line >> other.txt
           echo Third       >> other.txt
 
