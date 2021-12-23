@@ -22,45 +22,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Create file
-        run: |
-          printf "Hello\nWorld\n" > hw.txt
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-      - name: Create file
-        run: |
-          echo First        > README.md
-          echo Second Line >> other.txt
-          echo Third       >> other.txt
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
 
-      - name: Show file content
-        run: |
-          pwd
-          ls -la
-          cat hw.txt
-          cat other.txt
-
-      - name: Create directory and create file in homedir
-        run: |
-          ls -la ~/
-          mkdir ~/.zorg
-          echo First        > ~/.zorg/home.txt
-          echo Second Line >> ~/.zorg/home.txt
-          echo Third       >> ~/.zorg/home.txt
-          ls -la ~/.zorg/
-
-      - name: Show file content
-        run: |
-          ls -la ~/
-          cat ~/.zorg/home.txt
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        # - uses: actions/checkout@v2
-
-        # # Runs a single command using the runners shell
-        # - name: Run a one-line script
-        #   run: echo Hello, world!
-
-        # # Runs a set of commands using the runners shell
-        # - name: Run a multi-line script
-        #   run: |
-        #     touch hello_world.txt
-        #     echo Hello, world! >> hello_world.txt
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: cat hello_world.txt
